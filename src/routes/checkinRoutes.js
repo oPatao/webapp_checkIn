@@ -14,8 +14,6 @@ function estaAutenticado(req, res, next) { //autenticacao de que ss, esta logado
 }
 
 router.get('/', checkinController.indexView);
-router.get('/criar_conta', checkinController.criarContaView);
-router.get('/acessar', checkinController.acessoView);
 router.get('/registro', checkinController.telaRegistro);
 router.post('/registro', loginController.registro);
 router.get('/login', checkinController.telaLogin);

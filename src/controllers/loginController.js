@@ -19,8 +19,7 @@ exports.registro = async (req, res) => {
       Ningresso
     });
 
-    res.send('Registro bem-sucedido!');
-    res.redirect('/index');
+    res.redirect('/');
   } catch (error) {
     console.error('erro no registro do usuario:', error);
     res.status(400).send('erro no registro do usuario.');

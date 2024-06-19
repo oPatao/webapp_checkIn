@@ -4,24 +4,17 @@ const queueController = require('../controllers/queueController');
 
 
 
-function indexView(req, res){
+function indexView(req, res){ //renderiza a index/pagina inicial
     res.render('index.html');
 }
 
-function criarContaView(req, res){
-    res.render('testeCadastro.html');
-}
-
-function acessoView(req, res){
-    res.render('home.html');
-}
 
 function telaRegistro(req, res){
-    res.render('registro.html');
+    res.render('registro.html'); //rederiza a pagina de registro
 
 }
 function telaLogin(req, res){
-    res.render('login.html');
+    res.render('login.html'); //renderiza a pagina de login
 }
 
 
@@ -31,8 +24,6 @@ function telaLogin(req, res){
 
 module.exports = {
     indexView,
-    criarContaView,
-    acessoView,
     telaRegistro,
     telaLogin
 }
