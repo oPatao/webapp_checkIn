@@ -1,5 +1,8 @@
 const Usuario = require('../models/usuario');
 const { login } = require('./loginController');
+const queueController = require('../controllers/queueController');
+
+
 
 function indexView(req, res){
     res.render('index.html');
@@ -20,6 +23,8 @@ function telaRegistro(req, res){
 function telaLogin(req, res){
     res.render('login.html');
 }
+
+
 
 
 

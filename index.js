@@ -1,8 +1,10 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
+const session = require('express-session');
 const { sequelize } = require('./src/models/usuario');
 const bodyParser = require('body-parser');
 const app = express();
+
 
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
@@ -11,6 +13,13 @@ app.set('views', __dirname + '/src/views');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
+app.use(session({
+  secret: 'minhaChaveExtremamenteSecreta123!@#', 
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } 
+}));
 
 app.use('/', require('./src/routes/checkinRoutes'));
 

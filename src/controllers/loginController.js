@@ -18,7 +18,9 @@ exports.registro = async (req, res) => {
       password: senhaCripto,
       Ningresso
     });
+
     res.send('Registro bem-sucedido!');
+    res.redirect('/index');
   } catch (error) {
     console.error('erro no registro do usuario:', error);
     res.status(400).send('erro no registro do usuario.');
@@ -36,10 +38,11 @@ exports.login = async (req, res) => {
 
     if (user) {
       console.log('Senha no banco de dados:', user.password);
-      const match = await bcrypt.compare(password, Usuario.password);
+      const match = await bcrypt.compare(password, user.password);
 
       if (match) {
-        res.send(`Bem-vindo, ${user.name}! Seu número de ingresso é ${user.Ningresso}.`); // Exibir número de ingresso
+        req.session.userId = user.id; // salva o ID do usuario na sessao
+        res.redirect('/queue'); 
       } else {
         res.status(400).send('Email ou senha incorretos.');
       }
