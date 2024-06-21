@@ -16,6 +16,15 @@
     "mustache-express": "^1.3.2",
     "sequelize": "^6.37.3",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.6"
-  }
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oPatao/webapp_checkIn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oPatao/webapp_checkIn/issues"
+  },
+  "homepage": "https://github.com/oPatao/webapp_checkIn#readme"
 }
